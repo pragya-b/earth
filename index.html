@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Quest for the World's Luckiest Person</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-shell">
+    <canvas id="world" aria-label="A cozy explorable storybook world"></canvas>
+
+    <div class="sunwash"></div>
+    <div class="clouds" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+
+    <section id="opening" class="overlay visible">
+      <div class="storybook">
+        <div class="book-pages" id="book-pages">
+          <article class="page active">Long ago, people spoke of a rare individual.</article>
+          <article class="page">Someone whose presence quietly changed the lives of others.</article>
+          <article class="page">They were known as the World's Luckiest Person.</article>
+          <article class="page">But nobody knew who they were.</article>
+          <article class="page">Only clues remained.</article>
+          <article class="page">And so the search began.</article>
+        </div>
+        <button id="begin-btn" class="primary hidden">Begin the Quest</button>
+      </div>
+    </section>
+
+    <aside id="hud" class="hud hidden">
+      <div>
+        <strong>Memory Stars</strong>
+        <span id="star-count">0 / 10</span>
+      </div>
+      <div>
+        <strong>Current Chapter</strong>
+        <span id="area-name">The Meadow</span>
+      </div>
+      <button id="sound-toggle" class="icon-btn" title="Toggle sound">Sound Off</button>
+    </aside>
+
+    <section id="dialogue" class="dialogue hidden" aria-live="polite">
+      <div class="speaker" id="speaker"></div>
+      <p id="dialogue-text"></p>
+      <button id="next-dialogue" class="small-btn">Continue</button>
+    </section>
+
+    <section id="toast" class="toast hidden" aria-live="polite"></section>
+
+    <section id="journal" class="journal hidden">
+      <header>
+        <div>
+          <p>Memory Journal</p>
+          <h2 id="journal-title">A Star Remembers</h2>
+        </div>
+        <button id="close-journal" class="icon-btn" title="Close journal">Close</button>
+      </header>
+      <p id="journal-message"></p>
+    </section>
+
+    <section id="gift" class="overlay hidden">
+      <div class="gift-card">
+        <div id="gift-wrap" class="gift-wrap">
+          <div class="gift-lid"></div>
+          <div class="gift-box"></div>
+        </div>
+        <h2 id="gift-title">A Gift From the Guard</h2>
+        <p id="gift-line">Inside is a picture of the Earth and a folded letter.</p>
+        <button id="open-gift" class="primary">Open the Gift</button>
+      </div>
+    </section>
+
+    <section id="ending" class="overlay hidden">
+      <div class="ending-card gift-ending">
+        <button id="earth-button" class="earth-button hidden" title="Open the folded letter">
+          <span class="earth-illustration"></span>
+        </button>
+        <article id="final-letter" class="final-letter hidden"></article>
+      </div>
+    </section>
+
+    <section id="help" class="help">
+      <span>Move: WASD / Arrow Keys</span>
+      <span>Interact: E / Space</span>
+      <span>Click or tap to walk</span>
+    </section>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
